@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css', v=1) }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="currency-history-page">
+    <div class="app-container">
+      <header class="main-header">
+        <div class="container">
+            <nav class="main-nav">
+                <div class="nav-brand">
+                    <div class="site-logo">
+                        <span class="logo-text">k8g11</span>
+                        <span class="logo-separator">-</span>
+                        <span class="logo-title">Money</span>
+                    </div>
+                    <h1 class="main-title">История денег</h1>
+                </div>
+                <div class="nav-menu">
+                    <a href="/" class="nav-link">Главная</a>
+                    <a href="/converter" class="nav-link">Конвертер</a>
+                    <a href="/about" class="nav-link">О проекте</a>
+                    <a href="/currency_history" class="nav-link active">История валют</a>
+                    <a href="/support" class="nav-link">Поддержка</a>
+                </div>
+            </nav>
+            <p class="main-subtitle">Мировая история денег</p>
+        </div>
+      </header>
+
+        <main class="main-content">
+            <div class="container">
+                <div class="history-container">
+                    <div class="history-hero">
+                        <h2>Эволюция денег</h2>
+                        <p>Деньги прошли долгий путь от простых форм обмена до сложных финансовых систем</p>
+                    </div>
+
+                    <section class="history-section">
+                        <h3 class="section-title">Хронология развития денег</h3>
+
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-content">
+                                    <h4>Бартер и товарные деньги</h4>
+                                    <p>3000 лет до н.э. Первые формы денег: скот, зерно, ракушки, соль и другие ценные товары</p>
+                                    <div class="image-placeholder">
+                                        <img src="https://sbersova.ru/services/storage/download/global/6664aeff-0565-4097-9b5d-2e585b2e19e2?path=my_files/images/new_photos/cover_standart_500x335_2402-3.jpg" alt="">
+                                    </div>
+                                </div>
+                                <div class="timeline-year">3000 до н.э.</div>
+                                <div class="timeline-content">
+                                    <h4>Первые монеты</h4>
+                                    <p>Лидия (современная Турция). Первые стандартизированные монеты из электрума (сплав золота и серебра)</p>
+                                    <div class="image-placeholder">
+                                        <img src="https://capital-gold.ru/upload/iblock/40b/ve8hmrg21zpagzced6stiwpttjdqzdcg.jpg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div class="timeline-content">
+                                    <h4>Бумажные деньги</h4>
+                                    <p>Китай, династия Тан. Первые банкноты для удобства торговли</p>
+                                    <div class="image-placeholder">
+                                        <img src="https://bestmani.ru/images/photos/medium/article844.jpg" alt="">
+                                    </div>
+                                </div>
+                                <div class="timeline-year">700 н.э.</div>
+                                <div class="timeline-content">
+                                    <h4>Золотой стандарт</h4>
+                                    <p>Англия устанавливает золотой стандарт, привязывая фунт стерлингов к золоту</p>
+                                    <div class="image-placeholder">
+                                        <img src="https://slitok-gold.ru/assets/templates/slitok/images/other/partner/270927.jpg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div class="timeline-content">
+                                    <h4>Доллар США</h4>
+                                    <p>Континентальный конгресс принимает доллар как национальную валюту</p>
+                                    <div class="image-placeholder">
+                                        <img src="https://cdnn21.img.ria.ru/images/155926/77/1559267710_0:158:3077:1889_1920x0_80_0_0_9d7155c1df3c45669a7a743635b0469d.jpg" alt="">
+                                    </div>
+                                </div>
+                                <div class="timeline-year">1785</div>
+                                <div class="timeline-content">
+                                    <h4>Евро</h4>
+                                    <p>Введение единой европейской валюты для 11 стран ЕС</p>
+                                    <div class="image-placeholder">
+                                        <img src="https://st5.depositphotos.com/36829176/65556/i/450/depositphotos_655567882-stock-photo-money-counting-one-hundred-fifty.jpg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div class="timeline-content">
+                                    <h4>Биткоин</h4>
+                                    <p>Создание первой децентрализованной криптовалюты</p>
+                                    <div class="image-placeholder">
+                                        <img src="https://3dnews.ru/assets/external/illustrations/2026/02/05/1136410/bitcoins-unsplash.jpg" alt="">
+                                    </div>
+                                </div>
+                                <div class="timeline-year">2009</div>
+                                <div class="timeline-content">
+                                    <h4>Цифровые валюты</h4>
+                                    <p>Центральные банки начинают разработку цифровых валют (CBDC)</p>
+                                    <div class="image-placeholder">
+                                        <img src="https://gb.ru/blog/wp-content/uploads/2022/09/shutterstock_552445588.jpg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="history-section">
+                        <h3 class="section-title">Цифры и факты</h3>
+
+                        <div class="currency-stats">
+                            <div class="stat-card">
+                                <div class="stat-value">180+</div>
+                                <div class="stat-label">Стран с собственной валютой</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-value">40+</div>
+                                <div class="stat-label">Валют с изображениями правителей</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-value">23</div>
+                                <div class="stat-label">Страны используют франк</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-value">8</div>
+                                <div class="stat-label">Долларов разных стран</div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="history-section">
+                        <h3 class="section-title">Коллекция мировых валют</h3>
+
+                        <div class="currency-cards-grid">
+                            <div class="currency-card-item" data-currency="USD">
+                                <div class="currency-card-image usd">
+                                    <div class="currency-image-circle">
+                                        <img src="https://upload.wikimedia.org/wikipedia/commons/d/df/US_%241_obverse.jpg" alt="Доллар США">
+                                    </div>
+                                    <div class="currency-symbol-badge">$</div>
+                                </div>
+                                <div class="currency-card-content">
+                                    <h4 class="currency-card-title">Доллар США <span class="currency-code">(USD)</span></h4>
+                                    <p class="currency-card-description">
+                                        Самая популярная резервная валюта мира. На банкнотах изображены президенты США и национальные символы.
+                                    </p>
+                                    <div class="currency-card-facts">
+                                        <div class="fact-item">
+                                            <i class="bi bi-shield-check"></i>
+                                            <span>Резервная валюта №1</span>
+                                        </div>
+                                        <div class="fact-item">
+                                            <i class="bi bi-calendar"></i>
+                                            <span>С 1785 года</span>
+                                        </div>
+                                    </div>
+                                    <div class="currency-card-hover">
+                                        <p><strong>Интересный факт:</strong> 95% новых банкнот используются для замены изношенных.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="currency-card-item" data-currency="EUR">
+                                <div class="currency-card-image eur">
+                                    <div class="currency-image-circle">
+                                        <img src="https://www.finmarket.ru/currency/banknotes/image_share.ashx?file=https%3A%2F%2Ffmimg%2Efinmarket%2Eru%2FBanknotes%2F978%2F978%5Fk%5F100%5Fa%2Ejpg" alt="Евро">
+                                    </div>
+                                    <div class="currency-symbol-badge">€</div>
+                                </div>
+                                <div class="currency-card-content">
+                                    <h4 class="currency-card-title">Евро <span class="currency-code">(EUR)</span></h4>
+                                    <p class="currency-card-description">
+                                        Вторая по значимости резервная валюта. На банкнотах изображены архитектурные стили Европы.
+                                    </p>
+                                    <div class="currency-card-facts">
+                                        <div class="fact-item">
+                                            <i class="bi bi-shield-check"></i>
+                                            <span>Резервная валюта №2</span>
+                                        </div>
+                                        <div class="fact-item">
+                                            <i class="bi bi-calendar"></i>
+                                            <span>С 1999 года</span>
+                                        </div>
+                                    </div>
+                                    <div class="currency-card-hover">
+                                        <p><strong>Интересный факт:</strong> Евро имеет более 130 степеней защиты.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="currency-card-item" data-currency="GBP">
+                                <div class="currency-card-image gbp">
+                                    <div class="currency-image-circle">
+                                        <img src="https://www.finmarket.ru/currency/banknotes/image_share.ashx?file=https%3A%2F%2Ffmimg%2Efinmarket%2Eru%2FBanknotes%2F826%2F826%5Fk%5F5%5Fa%2Ejpg" alt="Фунт стерлингов">
+                                    </div>
+                                    <div class="currency-symbol-badge">£</div>
+                                </div>
+                                <div class="currency-card-content">
+                                    <h4 class="currency-card-title">Фунт стерлингов <span class="currency-code">(GBP)</span></h4>
+                                    <p class="currency-card-description">
+                                        Старейшая валюта в мире, находящаяся в обращении. На банкнотах - портрет королевы Елизаветы II.
+                                    </p>
+                                    <div class="currency-card-facts">
+                                        <div class="fact-item">
+                                            <i class="bi bi-award"></i>
+                                            <span>Самая старая валюта</span>
+                                        </div>
+                                        <div class="fact-item">
+                                            <i class="bi bi-calendar"></i>
+                                            <span>С 775 года</span>
+                                        </div>
+                                    </div>
+                                    <div class="currency-card-hover">
+                                        <p><strong>Интересный факт:</strong> Банкноты Шотландии отличаются от английских.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="currency-card-item" data-currency="JPY">
+                                <div class="currency-card-image jpy">
+                                    <div class="currency-image-circle">
+                                        <img src="https://www.finmarket.ru/currency/banknotes/image_share.ashx?file=https%3A%2F%2Ffmimg%2Efinmarket%2Eru%2FBanknotes%2F392%2F392%5Fk%5F1000%5Fa%2Ejpg" alt="Японская иена">
+                                    </div>
+                                    <div class="currency-symbol-badge">¥</div>
+                                </div>
+                                <div class="currency-card-content">
+                                    <h4 class="currency-card-title">Японская иена <span class="currency-code">(JPY)</span></h4>
+                                    <p class="currency-card-description">
+                                        Третья по популярности резервная валюта. На банкнотах изображены известные японские деятели.
+                                    </p>
+                                    <div class="currency-card-facts">
+                                        <div class="fact-item">
+                                            <i class="bi bi-shield-check"></i>
+                                            <span>Резервная валюта №3</span>
+                                        </div>
+                                        <div class="fact-item">
+                                            <i class="bi bi-calendar"></i>
+                                            <span>С 1871 года</span>
+                                        </div>
+                                    </div>
+                                    <div class="currency-card-hover">
+                                        <p><strong>Интересный факт:</strong> Иена означает "круглый объект".</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="currency-card-item" data-currency="CHF">
+                                <div class="currency-card-image chf">
+                                    <div class="currency-image-circle">
+                                        <img src="https://www.finmarket.ru/currency/banknotes/image_share.ashx?file=https%3A%2F%2Ffmimg%2Efinmarket%2Eru%2FBanknotes%2F756%2F756%5Fk%5F20%5Fa%2Ejpg" alt="Швейцарский франк">
+                                    </div>
+                                    <div class="currency-symbol-badge">Fr</div>
+                                </div>
+                                <div class="currency-card-content">
+                                    <h4 class="currency-card-title">Швейцарский франк <span class="currency-code">(CHF)</span></h4>
+                                    <p class="currency-card-description">
+                                        Известен своей стабильностью. На банкнотах изображены швейцарские деятели искусства.
+                                    </p>
+                                    <div class="currency-card-facts">
+                                        <div class="fact-item">
+                                            <i class="bi bi-shield-shaded"></i>
+                                            <span>Самая безопасная</span>
+                                        </div>
+                                        <div class="fact-item">
+                                            <i class="bi bi-calendar"></i>
+                                            <span>С 1850 года</span>
+                                        </div>
+                                    </div>
+                                    <div class="currency-card-hover">
+                                        <p><strong>Интересный факт:</strong> Самая безопасная валюта в мире.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="currency-card-item" data-currency="CAD">
+                                <div class="currency-card-image cad">
+                                    <div class="currency-image-circle">
+                                        <img src="https://www.finmarket.ru/currency/banknotes/image_share.ashx?file=https%3A%2F%2Ffmimg%2Efinmarket%2Eru%2FBanknotes%2F124%2F124%5Fk%5F100%5Fa%2Ejpg" alt="Канадский доллар">
+                                    </div>
+                                    <div class="currency-symbol-badge">C$</div>
+                                </div>
+                                <div class="currency-card-content">
+                                    <h4 class="currency-card-title">Канадский доллар <span class="currency-code">(CAD)</span></h4>
+                                    <p class="currency-card-description">
+                                        Прозван "луни" из-за изображения гагары на однодолларовой монете.
+                                    </p>
+                                    <div class="currency-card-facts">
+                                        <div class="fact-item">
+                                            <i class="bi bi-credit-card"></i>
+                                            <span>Пластиковые банкноты</span>
+                                        </div>
+                                        <div class="fact-item">
+                                            <i class="bi bi-calendar"></i>
+                                            <span>С 1858 года</span>
+                                        </div>
+                                    </div>
+                                    <div class="currency-card-hover">
+                                        <p><strong>Интересный факт:</strong> Первая валюта с пластиковыми банкнотами.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="history-section">
+                        <h3 class="section-title">Удивительные факты о деньгах</h3>
+
+                        <div class="features-grid">
+                            <div class="feature-card">
+                                <div class="feature-icon">💰</div>
+                                <h4>Самые тяжелые монеты</h4>
+                                <p>Австралийская монета номиналом 1 млн AUD весит 1 тонну и сделана из чистого золота</p>
+                            </div>
+
+                            <div class="feature-card">
+                                <div class="feature-icon">🏝️</div>
+                                <h4>Необычные валюты</h4>
+                                <p>На острове Яп используют каменные диски весом до 4 тонн как средство обмена</p>
+                            </div>
+
+                            <div class="feature-card">
+                                <div class="feature-icon">🧼</div>
+                                <h4>Деньги из необычных материалов</h4>
+                                <p>В тюрьмах сигареты, в Африке - ракушки каури, на Аляске - шкурки животных</p>
+                            </div>
+
+                            <div class="feature-card">
+                                <div class="feature-icon">💎</div>
+                                <h4>Самые дорогие монеты</h4>
+                                <p>Монета "Двойной орел" 1933 года продана за 7.6 млн долларов в 2002 году</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="history-section">
+                        <h3 class="section-title">Будущее денег</h3>
+
+                        <div class="future-tech">
+                            <div class="tech-item">
+                                <span class="tech-icon">₿</span>
+                                <div>
+                                    <h4>Криптовалюты</h4>
+                                    <p>Биткоин, Эфириум и другие децентрализованные валюты меняют финансовый мир</p>
+                                </div>
+                            </div>
+
+                            <div class="tech-item">
+                                <span class="tech-icon">🏦</span>
+                                <div>
+                                    <h4>Цифровые валюты ЦБ</h4>
+                                    <p>Центральные банки разрабатывают цифровые аналоги национальных валют</p>
+                                </div>
+                            </div>
+
+                            <div class="tech-item">
+                                <span class="tech-icon">📱</span>
+                                <div>
+                                    <h4>Мобильные платежи</h4>
+                                    <p>Бесконтактные платежи становятся новым стандартом во всем мире</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </main>
+
+        <footer class="main-footer">
+            <div class="container">
+                <div class="footer-content">
+                    <p class="footer-text">k8g11 © 2026</p>
+                    <p class="footer-source">Исторические данные собраны из открытых источников</p>
+                    <p class="footer-server">Запущено на Flask сервере</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+<a href="support" class="support-btn" target="_blank" title="Техподдержка">
+        <div class="support-btn__icon">?</div>
+</a>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='js/history.js') }}"></script>
+</body>
+</html>

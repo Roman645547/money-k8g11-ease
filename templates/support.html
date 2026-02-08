@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="support-page">
+    <div class="app-container">
+        <header class="main-header">
+            <div class="container">
+                <nav class="main-nav">
+                    <div class="nav-brand">
+                        <div class="site-logo support-logo">
+                            <span class="logo-text">k8g11</span>
+                            <span class="logo-separator">-</span>
+                            <span class="logo-title">Money</span>
+                        </div>
+                        <h1 class="main-title">Техническая поддержка</h1>
+                    </div>
+                    <div class="nav-menu">
+                        <a href="/" class="nav-link">Главная</a>
+                        <a href="/converter" class="nav-link">Конвертер</a>
+                        <a href="/about" class="nav-link">О проекте</a>
+                        <a href="/currency_history" class="nav-link">История валют</a>
+                        <a href="/support" class="nav-link active">Поддержка</a>
+                    </div>
+                </nav>
+                <p class="main-subtitle">Мы всегда готовы помочь с вопросами о работе сервиса</p>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <div class="container">
+                <div class="support-container">
+                    <div class="support-card">
+                        <div class="support-header">
+                            <h2>Создать обращение в поддержку</h2>
+                            <p>Заполните форму ниже, и мы ответим вам в кратчайшие сроки</p>
+                        </div>
+
+                        <form id="support-form" class="support-form">
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label for="name">Ваше имя *</label>
+                                    <input type="text" id="name" name="name" required
+                                           placeholder="Введите ваше имя"
+                                           minlength="2" maxlength="50">
+                                    <div class="form-hint">От 2 до 50 символов</div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="email">Email для ответа *</label>
+                                    <input type="email" id="email" name="email" required
+                                           placeholder="example@domain.com">
+                                    <div class="form-hint">На этот email придет ответ</div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="subject">Тема обращения *</label>
+                                <select id="subject" name="subject" required>
+                                    <option value="">Выберите тему</option>
+                                    <option value="техническая_проблема">Техническая проблема</option>
+                                    <option value="вопрос_по_конвертеру">Вопрос по конвертеру</option>
+                                    <option value="ошибка_в_данных">Ошибка в данных</option>
+                                    <option value="предложение_по_улучшению">Предложение по улучшению</option>
+                                    <option value="другое">Другое</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message">Сообщение *</label>
+                                <textarea id="message" name="message" required
+                                          rows="6"
+                                          placeholder="Опишите вашу проблему или вопрос подробно..."
+                                          minlength="10" maxlength="2000"></textarea>
+                                <div class="form-hint">Минимум 10 символов, максимум 2000</div>
+                                <div class="char-counter">
+                                    <span id="char-count">0</span> / 2000 символов
+                                </div>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="button" id="clear-form" class="secondary-button">
+                                    Очистить форму
+                                </button>
+                                <button type="submit" id="submit-ticket" class="primary-button">
+                                    <span class="button-icon">📨</span>
+                                    Отправить обращение
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+
+                    <div class="support-card">
+                        <div class="support-header">
+                            <h2>Проверить статус обращения</h2>
+                            <p>Введите ID вашего обращения, чтобы увидеть статус и ответ</p>
+                        </div>
+
+                        <div class="check-status-form">
+                            <div class="form-group">
+                                <label for="ticket-id">ID обращения</label>
+                                <div class="input-with-button">
+                                    <input type="number" id="ticket-id"
+                                           placeholder="Введите номер обращения"
+                                           min="1">
+                                    <button type="button" id="check-status" class="check-button">
+                                        Проверить
+                                    </button>
+                                </div>
+                                <div class="form-hint">ID был отправлен вам после создания обращения</div>
+                            </div>
+
+                            <div class="status-result" id="status-result">
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="support-card">
+                        <div class="support-header">
+                            <h2>Часто задаваемые вопросы</h2>
+                            <p>Возможно, ответ на ваш вопрос уже есть здесь</p>
+                        </div>
+
+                        <div class="faq-list">
+                            <div class="faq-item">
+                                <div class="faq-question">
+                                    <h3>Как часто обновляются курсы валют?</h3>
+                                    <span class="faq-toggle">+</span>
+                                </div>
+                                <div class="faq-answer">
+                                    <p>Курсы валют обновляются каждую минуту с использованием данных ExchangeRate-API. Данные кэшируются для повышения производительности.</p>
+                                </div>
+                            </div>
+
+                            <div class="faq-item">
+                                <div class="faq-question">
+                                    <h3>Почему конвертер показывает неверный курс?</h3>
+                                    <span class="faq-toggle">+</span>
+                                </div>
+                                <div class="faq-answer">
+                                    <p>Курсы в реальном времени могут отличаться от курсов банков. Наш сервис использует среднерыночные курсы. Для точных банковских курсов обратитесь в ваш банк.</p>
+                                </div>
+                            </div>
+
+                            <div class="faq-item">
+                                <div class="faq-question">
+                                    <h3>Как связаться с администрацией?</h3>
+                                    <span class="faq-toggle">+</span>
+                                </div>
+                                <div class="faq-answer">
+                                    <p>Используйте форму выше или напишите на support@k8g11-money.ru. Мы отвечаем в течение 24 часов в рабочие дни.</p>
+                                </div>
+                            </div>
+
+                            <div class="faq-item">
+                                <div class="faq-question">
+                                    <h3>Можно ли использовать API вашего сервиса?</h3>
+                                    <span class="faq-toggle">+</span>
+                                </div>
+                                <div class="faq-answer">
+                                    <p>Да, наш API доступен по адресу /api/rates. Пожалуйста, укажите источник данных при использовании.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="support-info">
+                        <div class="info-card">
+                            <div class="info-icon">⏰</div>
+                            <h3>Время работы</h3>
+                            <p>Пн-Пт: 9:00 - 18:00</p>
+                            <p>Сб-Вс: 10:00 - 16:00</p>
+                        </div>
+
+                        <div class="info-card">
+                            <div class="info-icon">📧</div>
+                            <h3>Email</h3>
+                            <p>support@k8g11-money.ru</p>
+                            <p>admin@k8g11-money.ru</p>
+                        </div>
+
+                        <div class="info-card">
+                            <div class="info-icon">⏱️</div>
+                            <h3>Среднее время ответа</h3>
+                            <p>2-4 часа в рабочее время</p>
+                            <p>До 24 часов в выходные</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="main-footer">
+            <div class="container">
+                <div class="footer-content">
+                    <p class="footer-text">k8g11 © 2026</p>
+                    <p class="footer-source">Техподдержка создана вручную</p>
+                    <p class="footer-server">Запущено на Flask сервере</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+
+    <div id="result-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modal-title">Успешно!</h2>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p id="modal-message">Ваше обращение успешно отправлено.</p>
+                <div class="modal-info" id="modal-info"></div>
+            </div>
+            <div class="modal-footer">
+                <button id="modal-ok" class="primary-button">OK</button>
+            </div>
+        </div>
+    </div>
+
+<a href="support" class="support-btn" target="_blank" title="Техподдержка">
+        <div class="support-btn__icon">?</div>
+</a>
+
+    <script src="{{ url_for('static', filename='js/support.js') }}"></script>
+</body>
+</html>

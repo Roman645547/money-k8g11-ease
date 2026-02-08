@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <header class="main-header">
+            <div class="container">
+                <nav class="main-nav">
+                    <div class="nav-brand">
+                        <div class="site-logo">
+                            <span class="logo-text">k8g11</span>
+                            <span class="logo-separator">-</span>
+	                        <span class="logo-title">Money</span>
+                        </div>
+                        <h1 class="main-title">О проекте</h1>
+                    </div>
+                    <div class="nav-menu">
+                        <a href="/" class="nav-link">Главная</a>
+                        <a href="/converter" class="nav-link">Конвертер</a>
+                        <a href="/about" class="nav-link active">О проекте</a>
+                        <a href="/currency_history" class="nav-link">История валют</a>
+                        <a href="/support" class="nav-link">Поддержка</a>
+                    </div>
+                </nav>
+                <p class="main-subtitle">Информация о конвертере валют и его возможностях</p>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <div class="container">
+                <div class="about-container">
+                    <div class="about-card">
+                        <div class="about-header">
+                            <h2>О проекте "k8g11 - MONEY"</h2>
+                            <p>Современный инструмент для работы с курсами валют в реальном времени</p>
+                        </div>
+
+                        <div class="about-content">
+                            <section class="about-section">
+                                <div class="section-icon">🎯</div>
+                                <h3>Цель проекта</h3>
+                                <p>Создание удобного и точного инструмента для конвертации валют с актуальными курсами в режиме реального времени. Проект разработан для всех, кто работает с иностранной валютой: путешественников, инвесторов, трейдеров и обычных пользователей.</p>
+                            </section>
+
+                            <section class="about-section">
+                                <div class="section-icon">⚙️</div>
+                                <h3>Технологии</h3>
+                                <div class="tech-stack">
+                                    <div class="tech-item">
+                                        <span class="tech-icon">
+                                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1280px-Python-logo-notext.svg.png" alt="">
+                                        </span>
+                                        <div>
+                                            <h4>Backend</h4>
+                                            <p>Python Flask для серверной части, REST API для получения курсов валют</p>
+                                        </div>
+                                    </div>
+                                    <div class="tech-item">
+                                        <span class="tech-icon">
+                                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/1280px-HTML5_logo_and_wordmark.svg.png" alt="">
+                                        </span>
+                                        <div>
+                                            <h4>Frontend</h4>
+                                            <p>HTML5, CSS3, JavaScript (ES6+) для современного интерфейса</p>
+                                        </div>
+                                    </div>
+                                    <div class="tech-item">
+                                        <span class="tech-icon">
+                                            <img src="https://cdn-icons-png.flaticon.com/512/2165/2165004.png" alt="">
+                                        </span>
+                                        <div>
+                                            <h4>API</h4>
+                                            <p>ExchangeRate-API для получения актуальных курсов валют</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+
+                            <section class="about-section">
+                                <div class="section-icon">✨</div>
+                                <h3>Основные возможности</h3>
+                                <div class="features-grid">
+                                    <div class="feature-card">
+                                        <div class="feature-icon">💱</div>
+                                        <h4>Конвертация валют</h4>
+                                        <p>Поддержка 17+ мировых валют с мгновенным расчетом</p>
+                                    </div>
+                                    <div class="feature-card">
+                                        <div class="feature-icon">📈</div>
+                                        <h4>Актуальные курсы</h4>
+                                        <p>Обновление данных каждую минуту из надежных источников</p>
+                                    </div>
+                                    <div class="feature-card">
+                                        <div class="feature-icon">🚀</div>
+                                        <h4>Быстрый расчет</h4>
+                                        <p>Кэширование данных для увеличения скорости работы</p>
+                                    </div>
+                                    <div class="feature-card">
+                                        <div class="feature-icon">📱</div>
+                                        <h4>Адаптивный дизайн</h4>
+                                        <p>Удобное отображение на всех устройствах</p>
+                                    </div>
+                                </div>
+                            </section>
+
+                            <section class="about-section">
+                                <div class="section-icon">📋</div>
+                                <h3>Поддерживаемые валюты</h3>
+                                <div class="currencies-list">
+                                    <div class="currency-badge">🇺🇸 USD</div>
+                                    <div class="currency-badge">🇪🇺 EUR</div>
+                                    <div class="currency-badge">🇷🇺 RUB</div>
+                                    <div class="currency-badge">🇬🇧 GBP</div>
+                                    <div class="currency-badge">🇯🇵 JPY</div>
+                                    <div class="currency-badge">🇨🇳 CNY</div>
+                                    <div class="currency-badge">🇨🇦 CAD</div>
+                                    <div class="currency-badge">🇦🇺 AUD</div>
+                                    <div class="currency-badge">🇨🇭 CHF</div>
+                                    <div class="currency-badge">🇸🇬 SGD</div>
+                                    <div class="currency-badge">🇭🇰 HKD</div>
+                                    <div class="currency-badge">🇮🇳 INR</div>
+                                    <div class="currency-badge">🇧🇷 BRL</div>
+                                    <div class="currency-badge">🇲🇽 MXN</div>
+                                    <div class="currency-badge">🇰🇷 KRW</div>
+                                    <div class="currency-badge">🇹🇷 TRY</div>
+                                    <div class="currency-badge">🇿🇦 ZAR</div>
+                                </div>
+                            </section>
+
+                            <section class="about-section">
+                                <div class="section-icon">👨‍💻</div>
+                                <h3>Разработчик</h3>
+                                <div class="developer-info">
+                                    <div class="dev-avatar">
+                                        <img src="https://worksolutions.ru/uploads/t_DUW_3hn_Ao_Qe_SQV_5x_Col_Rr_E_Ly_MYZ_Ial_OKFI_7zmza_N_02f17d7c57.png" alt="">
+                                    </div>
+                                    <div class="dev-details">
+                                        <h4>Roman k8g11</h4>
+                                        <p>Разработчик с опытом создания веб-приложений на Python и JavaScript. Специализация: создание сайтов и приложений.</p>
+                                        <div class="dev-tags">
+                                            <span class="dev-tag">Python</span>
+                                            <span class="dev-tag">Flask</span>
+                                            <span class="dev-tag">JavaScript</span>
+                                            <span class="dev-tag">API</span>
+                                            <span class="dev-tag">HTML</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="main-footer">
+            <div class="container">
+                <div class="footer-content">
+                    <p class="footer-text">k8g11 © 2026</p>
+                    <p class="footer-source">Курсы предоставлены ExchangeRate-API</p>
+                    <p class="footer-server">Запущено на Flask сервере</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+<a href="support" class="support-btn" target="_blank" title="Техподдержка">
+        <div class="support-btn__icon">?</div>
+</a>
+
+    <script src="{{ url_for('static', filename='js/about.js') }}"></script>
+</body>
+</html>

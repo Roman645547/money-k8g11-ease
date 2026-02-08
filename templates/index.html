@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css', v=1) }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <header class="main-header">
+            <div class="container">
+                <nav class="main-nav">
+                    <div class="nav-brand">
+                        <div class="site-logo">
+                            <span class="logo-text">k8g11</span>
+                            <span class="logo-separator">-</span>
+	                        <span class="logo-title">Money</span>
+                        </div>
+                        <h1 class="main-title">Курсы валют мира</h1>
+                    </div>
+                    <div class="nav-menu">
+                        <a href="/" class="nav-link active">Главная</a>
+                        <a href="/converter" class="nav-link">Конвертер</a>
+						<a href="/about" class="nav-link">О проекте</a>
+                        <a href="/currency_history" class="nav-link">История валют</a>
+                        <a href="/support" class="nav-link">Поддержка</a>
+                    </div>
+                </nav>
+                <p class="main-subtitle">Актуальные курсы в реальном времени</p>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <div class="container">
+                <div class="currency-controls">
+                    <div class="controls-left">
+                        <h2 class="section-title">Курсы валют к USD</h2>
+                        <p class="section-subtitle">Актуальные курсы на основе доллара США</p>
+                    </div>
+                    <div class="controls-right">
+                        <div class="search-box">
+                            <input type="text" id="currency-search" placeholder="Поиск валюты..." class="search-input">
+                            <span class="search-icon">🔍</span>
+                        </div>
+                        <button id="refresh-all-btn" class="refresh-all-button">
+                            <span class="refresh-icon">🔄</span>
+                            Обновить все
+                        </button>
+                    </div>
+                </div>
+
+                <section class="currency-cards" id="currency-cards">
+                    <div class="loading-spinner" id="loading-spinner">
+                        <div class="spinner"></div>
+                        <p>Загрузка курсов валют...</p>
+                    </div>
+                </section>
+
+                <div class="popular-pairs">
+                    <h3 class="pairs-title">Популярные валютные пары</h3>
+                    <div class="pairs-grid">
+                        <div class="pair-card">
+                            <div class="pair-header">
+                                <span class="pair-flag">🇺🇸/🇷🇺</span>
+                                <span class="pair-code">USD/RUB</span>
+                            </div>
+                            <div class="pair-rate" id="usd-rub-rate">—</div>
+                            <div class="pair-label">Доллар к рублю</div>
+                        </div>
+                        <div class="pair-card">
+                            <div class="pair-header">
+                                <span class="pair-flag">🇪🇺/🇷🇺</span>
+                                <span class="pair-code">EUR/RUB</span>
+                            </div>
+                            <div class="pair-rate" id="eur-rub-rate">—</div>
+                            <div class="pair-label">Евро к рублю</div>
+                        </div>
+                        <div class="pair-card">
+                            <div class="pair-header">
+                                <span class="pair-flag">🇷🇺/🇺🇸</span>
+                                <span class="pair-code">RUB/USD</span>
+                            </div>
+                            <div class="pair-rate" id="rub-usd-rate">—</div>
+                            <div class="pair-label">Рубль к доллару</div>
+                        </div>
+                        <div class="pair-card">
+                            <div class="pair-header">
+                                <span class="pair-flag">🇪🇺/🇺🇸</span>
+                                <span class="pair-code">EUR/USD</span>
+                            </div>
+                            <div class="pair-rate" id="eur-usd-rate">—</div>
+                            <div class="pair-label">Евро к доллару</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="update-section">
+                    <div class="update-info">
+                        <p>Данные обновляются автоматически каждую минуту</p>
+                        <div class="update-time" id="update-time">Последнее обновление: —</div>
+                    </div>
+                    <div class="status-message" id="status-message"></div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="main-footer">
+            <div class="container">
+                <div class="footer-content">
+                    <p class="footer-text">k8g11 © 2026</p>
+                    <p class="footer-source">Курсы предоставлены ExchangeRate-API</p>
+                    <p class="footer-server">Запущено на Flask сервере</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+<a href="support" class="support-btn" target="_blank" title="Техподдержка">
+        <div class="support-btn__icon">?</div>
+</a>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

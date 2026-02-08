@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <header class="main-header">
+            <div class="container">
+                <nav class="main-nav">
+                    <div class="nav-brand">
+                        <div class="site-logo admin-logo">
+                            <span class="logo-text">k8g11</span>
+                            <span class="logo-separator">-</span>
+                            <span class="logo-title">Money</span>
+                        </div>
+                        <h1 class="main-title">Админ-панель поддержки</h1>
+                    </div>
+                    <div class="nav-menu">
+                        <a href="/" class="nav-link">Главная</a>
+                        <a href="/admin/support" class="nav-link active">Админ-панель</a>
+                        <a href="/support" class="nav-link">Обычная поддержка</a>
+                    </div>
+                </nav>
+                <p class="main-subtitle">Управление обращениями пользователей</p>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <div class="container">
+                <div class="admin-container">
+                    <div class="admin-panel">
+                        <div class="panel-header">
+                            <h2>Управление обращениями</h2>
+                            <div class="panel-controls">
+                                <button id="refresh-tickets" class="refresh-button">
+                                    <span class="refresh-icon">🔄</span>
+                                    Обновить
+                                </button>
+                                <div class="admin-info">
+                                    <input type="text" id="admin-name"
+                                           placeholder="Ваше имя (админ)"
+                                           class="admin-input">
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="filters">
+                            <div class="filter-group">
+                                <label for="filter-status">Статус:</label>
+                                <select id="filter-status">
+                                    <option value="all">Все</option>
+                                    <option value="new">Новые</option>
+                                    <option value="in_progress">В работе</option>
+                                    <option value="resolved">Решено</option>
+                                </select>
+                            </div>
+                            <div class="filter-group">
+                                <label for="filter-date">Сортировка:</label>
+                                <select id="filter-date">
+                                    <option value="newest">Сначала новые</option>
+                                    <option value="oldest">Сначала старые</option>
+                                </select>
+                            </div>
+                            <button id="apply-filters" class="filter-button">Применить</button>
+                        </div>
+
+
+                        <div class="tickets-list" id="tickets-list">
+                            <div class="loading-state">
+                                <div class="spinner"></div>
+                                <p>Загрузка обращений...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="main-footer">
+            <div class="container">
+                <div class="footer-content">
+                    <p class="footer-text">Админ-панель k8g11 - Money</p>
+                    <p class="footer-source">Только для администраторов</p>
+                    <p class="footer-server">Запущено на Flask сервере</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+
+    <div id="reply-modal" class="modal">
+        <div class="modal-content wide-modal">
+            <div class="modal-header">
+                <h2 id="reply-modal-title">Ответить на обращение #</h2>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="ticket-info">
+                    <h3>Информация об обращении</h3>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <strong>Имя:</strong> <span id="modal-user-name"></span>
+                        </div>
+                        <div class="info-item">
+                            <strong>Email:</strong> <span id="modal-user-email"></span>
+                        </div>
+                        <div class="info-item">
+                            <strong>Тема:</strong> <span id="modal-subject"></span>
+                        </div>
+                        <div class="info-item">
+                            <strong>Дата:</strong> <span id="modal-date"></span>
+                        </div>
+                    </div>
+
+                    <div class="message-box">
+                        <strong>Сообщение пользователя:</strong>
+                        <p id="modal-message" class="user-message"></p>
+                    </div>
+                </div>
+
+                <div class="reply-form">
+                    <div class="form-group">
+                        <label for="reply-text">Ваш ответ *</label>
+                        <textarea id="reply-text" rows="8"
+                                  placeholder="Введите ваш ответ здесь..."
+                                  minlength="10" maxlength="2000"></textarea>
+                        <div class="char-counter">
+                            <span id="reply-char-count">0</span> / 2000 символов
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="reply-status">Изменить статус</label>
+                        <select id="reply-status">
+                            <option value="in_progress">В работе</option>
+                            <option value="resolved">Решено</option>
+                            <option value="new">Новый (сбросить)</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="cancel-reply" class="secondary-button">Отмена</button>
+                <button id="submit-reply" class="primary-button">Отправить ответ</button>
+                <button id="delete-ticket" class="danger-button">Удалить обращение</button>
+            </div>
+        </div>
+    </div>
+
+<a href="support" class="support-btn" target="_blank" title="Техподдержка">
+        <div class="support-btn__icon">?</div>
+</a>
+
+    <script src="{{ url_for('static', filename='js/admin_support.js') }}"></script>
+</body>
+</html>

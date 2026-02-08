@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Конвертер валют</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <header class="main-header">
+            <div class="container">
+                <nav class="main-nav">
+                    <div class="nav-brand">
+                        <div class="site-logo">
+                            <span class="logo-text">k8g11</span>
+                            <span class="logo-separator">-</span>
+	                        <span class="logo-title">Money</span>
+                        </div>
+                        <h1 class="main-title">Конвертер валют</h1>
+                    </div>
+                    <div class="nav-menu">
+                        <a href="/" class="nav-link">Главная</a>
+                        <a href="/converter" class="nav-link active">Конвертер</a>
+						<a href="/about" class="nav-link">О проекте</a>
+                        <a href="/currency_history" class="nav-link">История валют</a>
+                        <a href="/support" class="nav-link">Поддержка</a>
+                    </div>
+                </nav>
+                <p class="main-subtitle">Быстрый и точный расчет обмена валют</p>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <div class="container">
+                <div class="converter-container">
+                    <div class="converter-card">
+                        <div class="converter-header">
+                            <h2>Калькулятор обмена валют</h2>
+                            <p>Введите сумму и выберите валюты для конвертации</p>
+                        </div>
+
+                        <div class="converter-form">
+                            <div class="input-group">
+                                <div class="amount-input">
+                                    <label for="amount">Сумма:</label>
+                                    <input type="number" id="amount" placeholder="Введите сумму" min="0" step="0.01" value="100">
+                                </div>
+
+                                <div class="currency-selectors">
+                                    <div class="currency-select">
+                                        <label for="from-currency">Из валюты:</label>
+                                        <div class="select-wrapper">
+                                            <select id="from-currency">
+                                                <option value="USD">🇺🇸 USD - Доллар США</option>
+                                                <option value="EUR">🇪🇺 EUR - Евро</option>
+                                                <option value="RUB">🇷🇺 RUB - Российский рубль</option>
+                                                <option value="GBP">🇬🇧 GBP - Фунт стерлингов</option>
+                                                <option value="JPY">🇯🇵 JPY - Японская иена</option>
+                                                <option value="CNY">🇨🇳 CNY - Китайский юань</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="swap-button-container">
+                                        <button id="swap-currencies" class="swap-button">
+                                            <span class="swap-icon">⇄</span>
+                                        </button>
+                                    </div>
+
+                                    <div class="currency-select">
+                                        <label for="to-currency">В валюту:</label>
+                                        <div class="select-wrapper">
+                                            <select id="to-currency">
+                                                <option value="RUB">🇷🇺 RUB - Российский рубль</option>
+                                                <option value="USD">🇺🇸 USD - Доллар США</option>
+                                                <option value="EUR">🇪🇺 EUR - Евро</option>
+                                                <option value="GBP">🇬🇧 GBP - Фунт стерлингов</option>
+                                                <option value="JPY">🇯🇵 JPY - Японская иена</option>
+                                                <option value="CNY">🇨🇳 CNY - Китайский юань</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button id="convert-btn" class="convert-button">
+                                <span class="convert-icon">💱</span>
+                                Конвертировать
+                            </button>
+                        </div>
+
+                        <div class="converter-result">
+                            <div class="result-header">
+                                <h3>Результат конвертации:</h3>
+                            </div>
+                            <div class="result-content">
+                                <div class="result-amount" id="result-amount">—</div>
+                                <div class="result-details">
+                                    <div class="rate-info">
+                                        <span class="rate-label">Курс:</span>
+                                        <span class="rate-value" id="exchange-rate">—</span>
+                                    </div>
+                                    <div class="time-info">
+                                        <span class="time-label">Обновлено:</span>
+                                        <span class="time-value" id="conversion-time">—</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="converter-info">
+                            <div class="info-box">
+                                <h4>💡 Как использовать</h4>
+                                <ol>
+                                    <li>Введите сумму для конвертации</li>
+                                    <li>Выберите исходную валюту</li>
+                                    <li>Выберите целевую валюту</li>
+                                    <li>Нажмите "Конвертировать"</li>
+                                    <li>Используйте кнопку ⇄ для быстрого обмена валют</li>
+                                </ol>
+                            </div>
+                            <div class="info-box">
+                                <h4>📊 Популярные конвертации</h4>
+                                <div class="quick-conversions">
+                                    <button class="quick-btn" data-from="USD" data-to="RUB" data-amount="100">100 USD → RUB</button>
+                                    <button class="quick-btn" data-from="EUR" data-to="RUB" data-amount="100">100 EUR → RUB</button>
+                                    <button class="quick-btn" data-from="RUB" data-to="USD" data-amount="1000">1000 RUB → USD</button>
+                                    <button class="quick-btn" data-from="USD" data-to="EUR" data-amount="50">50 USD → EUR</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="main-footer">
+            <div class="container">
+                <div class="footer-content">
+                    <p class="footer-text">k8g11 © 2026</p>
+                    <p class="footer-source">Курсы предоставлены ExchangeRate-API</p>
+                    <p class="footer-server">Запущено на Flask сервере</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+<a href="support" class="support-btn" target="_blank" title="Техподдержка">
+        <div class="support-btn__icon">?</div>
+</a>
+
+    <script src="{{ url_for('static', filename='js/converter.js') }}"></script>
+</body>
+</html>
